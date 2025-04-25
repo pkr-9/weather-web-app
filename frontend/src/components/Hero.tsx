@@ -3,7 +3,7 @@ import "../assets/styles.css";
 import WeatherForm from "./WeatherForm";
 import WeatherCard from "./WeatherCard";
 import { getWeather } from "../api";
-import { WeatherData } from "../types"; // If you have defined WeatherData type
+import { WeatherData } from "../types";
 
 const Hero: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="hero">
-      <div className="container py-4">
+      <div className="hero-content">
         <h2 className="mb-4">Check Weather</h2>
         <WeatherForm onSearch={handleSearch} />
         {weather && <WeatherCard weather={weather} />}

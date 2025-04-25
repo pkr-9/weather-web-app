@@ -1,29 +1,40 @@
-import { useState } from "react";
-import { Button, Form, InputGroup } from "react-bootstrap";
+import React, { useEffect, useRef, useState } from "react";
 
-export default function WeatherForm({
-  onSearch,
-}: {
+interface WeatherFormProps {
   onSearch: (city: string) => void;
-}) {
+}
+
+const WeatherForm: React.FC<WeatherFormProps> = ({ onSearch }) => {
   const [city, setCity] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus(); // Auto-focus on load
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (city.trim()) {
+      onSearch(city.trim());
+      setCity("");
+    }
+  };
 
   return (
-    <Form
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSearch(city);
-      }}
-    >
-      <InputGroup>
-        <Form.Control
-          type="text"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <Button type="submit">Search</Button>
-      </InputGroup>
-    </Form>
+    <form onSubmit={handleSubmit} className="d-flex justify-content-center">
+      <input
+        ref={inputRef}
+        type="text"
+        className="form-control w-50 me-2"
+        placeholder="Enter city name..."
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+      <button type="submit" className="btn btn-primary">
+        Search
+      </button>
+    </form>
   );
-}
+};
+
+export default WeatherForm;

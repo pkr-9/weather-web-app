@@ -29,21 +29,6 @@
   animation-delay: 0.8s;
 }
 
-/* body {
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-} */
-
-/* body.loaded {
-  opacity: 1;
-} */
-
 .weather-card {
   border-radius: 12px;
   background: #f8f9fa;
@@ -68,7 +53,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(0, 0, 0, 0.5);  */
   z-index: 1;
 }
 
@@ -92,4 +76,8 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
   line-height: 1.6;
+}
+
+input.form-control {
+  z-index: 3;
 }
