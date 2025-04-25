@@ -1,0 +1,39 @@
+weather-web-app/
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py                # FastAPI entry point
+│   │   ├── api/
+│   │   │   └── routes.py          # Weather-related API routes
+│   │   ├── core/
+│   │   │   ├── config.py          # API key and settings
+│   │   ├── models/
+│   │   │   └── weather_model.py   # Pydantic models
+│   │   ├── services/
+│   │   │   └── weather_service.py # Weather logic and DB interactions
+│   │   ├── db/
+│   │   │   ├── database.py        # SQLite or SQLAlchemy setup
+│   │   │   └── init_db.py         # DB initialization
+│   └── requirements.txt
+│
+└── frontend/
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── assets/
+    │   │   └── styles.css
+    │   ├── components/
+    │   │   ├── WeatherForm.tsx
+    │   │   ├── WeatherCard.tsx
+    │   │   ├── Loader.tsx
+    │   │   └── ErrorAlert.tsx
+    │   ├── pages/
+    │   │   ├── HomePage.tsx
+    │   │   └── HistoryPage.tsx
+    │   ├── App.tsx
+    │   ├── index.tsx
+    │   └── api.ts                  # Axios instance
+    ├── tsconfig.json
+    ├── vite.config.ts
+    └── package.json
