@@ -1,0 +1,10 @@
+backend/w_env/
+__pycache__/
+
+frontend/node_modules/
+
+.vscode/
+.idea/
+.DS_Store
+
+*.env
