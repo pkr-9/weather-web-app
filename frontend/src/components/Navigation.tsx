@@ -28,13 +28,18 @@ const Navigation: React.FC<NavigationProps> = () => {
             className="d-flex align-items-center gap-2"
           >
             <div className="logo-img" />
-            <span className="company-name">My Portfolio</span>
+            <span className="company-name">Weather Web App</span>
           </Navbar.Brand>
           <Navbar.Collapse
             id="responsive-navbar-nav"
             className="justify-content-end user-info d-flex align-items-center gap-2"
           >
             <Nav className="nav-links d-flex list-unstyled mb-0">
+              <Nav.Item>
+                <Nav.Link as={Link} to="/history">
+                  History
+                </Nav.Link>
+              </Nav.Item>
               <Nav.Item>
                 <Nav.Link as={Link} to="/">
                   Home
@@ -43,11 +48,6 @@ const Navigation: React.FC<NavigationProps> = () => {
               <Nav.Item>
                 <Nav.Link as={Link} to="/about">
                   About
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={Link} to="/history">
-                  History
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
